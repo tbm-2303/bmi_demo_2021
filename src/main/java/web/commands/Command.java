@@ -31,9 +31,7 @@ public abstract class Command
         commands.put("bmiresult", new CalcBMICommand("resultpage"));
     }
 
-    public static Command fromPath(
-            HttpServletRequest request,
-            Database db)
+    public static Command fromPath(HttpServletRequest request, Database db)
     {
         String action = request.getPathInfo().replaceAll("^/+", "");
         System.out.println("--> " + action);

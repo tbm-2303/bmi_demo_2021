@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CalcBMICommand extends CommandUnprotectedPage
 {
-    public CalcBMICommand(String pageToShow)
+    public CalcBMICommand(String pageToShow) //this pageToShow is the name of the jsp page that we want the command to fetch.
     {
         super(pageToShow);
     }
@@ -23,6 +23,7 @@ public class CalcBMICommand extends CommandUnprotectedPage
 
         try
         {
+            // get parameters from the form on the index.jsp page
             height = Double.parseDouble(request.getParameter("height"));
             weight = Double.parseDouble(request.getParameter("weight"));
         }
@@ -32,10 +33,10 @@ public class CalcBMICommand extends CommandUnprotectedPage
             return "index";
             //throw new UserException("Husk at du skal indtaste to heltal i formularen");
         }
-
+// calculate BMI and BMI_category
         bmi = BmiUtil.calcBMI(height, weight);
         category = BmiUtil.getCategory(bmi);
-
+// set attributes so we can fetch them from the jsp pages.
         request.setAttribute("bmi", String.format("%.2f", bmi));
         request.setAttribute("height", height);
         request.setAttribute("weight", weight);

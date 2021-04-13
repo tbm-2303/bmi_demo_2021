@@ -53,6 +53,7 @@ public class FrontController extends HttpServlet
             response.setCharacterEncoding("UTF-8");
             Command action = Command.fromPath(request, database);
 
+
             if (action instanceof CommandUnknown) {
                 response.sendError(404);
                 return;
