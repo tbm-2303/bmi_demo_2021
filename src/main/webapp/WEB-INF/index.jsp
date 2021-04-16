@@ -31,6 +31,29 @@
                         <input id="weight" name="weight" type="text" class="form-control"/><br/>
                     </div>
 
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+
+                    <label for="sport">Din primære idræt:</label>
+
+                    <select name="sport" id="sport">
+                        <option value="1">fodbold</option>
+                        <option value="2">basketball</option>
+                        <option value="3">cricket</option>
+                        <option value="4">dart</option>
+                    </select>
+
+                    <br/>
+
+                    <input type="checkbox" id="hobby1" name="hobby" value="1">
+                    <label for="hobby1"> Vinterbadning og strik</label><br>
+                    <input type="checkbox" id="hobby2" name="hobby" value="2">
+                    <label for="hobby2"> Spille dota</label><br>
+                    <input type="checkbox" id="hobby3" name="hobby" value="3">
+                    <label for="hobby3"> Paintball</label><br><br>
+
                     <c:if test="${requestScope.error != null}">
                         <p style="color:red;">
                                 ${requestScope.error}
